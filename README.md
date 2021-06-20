@@ -1,4 +1,4 @@
-# K8s-fundamental-project
+# K8s-Fundamental-Project
 
 ## Set the Variables:
 
