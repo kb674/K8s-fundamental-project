@@ -23,7 +23,7 @@ spec:
         - name: DATABASE_URI
           value: mysql+pymysql://root:( password )@mysql-service/( database )
         - name: SECRET_KEY
-          value: ( enter a secret key )
+          value: (enter a secret key)
 ---
 apiVersion: v1
 kind: Service

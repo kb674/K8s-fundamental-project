@@ -21,9 +21,9 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_DATABASE
-          value: ( enter a database )
+          value: (enter a database)
         - name: MYSQL_ROOT_PASSWORD
-          value: ( enter a password )
+          value: (enter a password)
 ---
 apiVersion: v1
 kind: Service
