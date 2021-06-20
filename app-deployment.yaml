@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: kb674/tricktionary_image:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_URI
+          value: mysql+pymysql://root:( password )@mysql-service/( database )
+        - name: SECRET_KEY
+          value: ( enter a secret key )
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  selector:
+    app: app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
